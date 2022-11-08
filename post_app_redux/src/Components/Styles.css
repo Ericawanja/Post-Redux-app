@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: rgb(49, 46, 129);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+.stats {
+  display: flex;
+  gap: 15px;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+.input_wrapper,
+.main_post {
+  gap: 10px;
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 10px;
+}
+input,
+textarea {
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(238, 239, 241);
+}
+.input {
+}
+.save_btn {
+  padding: 10px;
+  width: 65px;
+}
+
+.btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.main_post {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  gap: 2px;
+
+}
+.post_icons {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.post_title{
+    line-height: 2;
+    font-weight: 600;
+}
+.post_desc{
+    color: grey;
+}
+.likes{
+    padding-right: 3px;
+    font-weight: 600;
+}
