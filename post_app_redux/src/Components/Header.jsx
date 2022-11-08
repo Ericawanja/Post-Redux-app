@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import './Styles.css'
 
 function Header() {
-    const posts = useSelector((state) => state.posts);
+    const {posts, total_likes, total_dislikes} = useSelector((state) => state);
+
   return (
     <>
     <div className="header">
@@ -13,7 +14,10 @@ function Header() {
                 Total:{posts.length}
             </span>
             <span className="likes">
-                Likes: 0
+                Likes: {total_likes}
+            </span>
+            <span className="dlikes">
+                Dislikes: {total_dislikes}
             </span>
         </span>
     </div>

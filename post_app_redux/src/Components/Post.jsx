@@ -1,17 +1,26 @@
 import React from "react";
+import { IconContext } from 'react-icons'
+import {AiOutlineLike, AiOutlineDislike, AiOutlineDelete} from 'react-icons/ai'
+
+
 import { useSelector, useDispatch } from "react-redux";
-import {handele_edit, handle_create, handle_like, handle_delete} from './redux/Actions/PostActions'
+import {
+  handle_dislike,
+  handle_create,
+  handle_like,
+  handle_delete,
+} from "./redux/Actions/PostActions";
 
 function Post() {
   const posts = useSelector((state) => state.posts);
-  
-  let dispatch = useDispatch()
+
+  let dispatch = useDispatch();
   return (
     <>
       <div className="main_post">
         {posts.length > 0 &&
           posts.map((p) => {
-            let { title, desc, id, likes } = p;
+            let { title, desc, id, likes, dislikes } = p;
             return (
               <>
                 <div className="post_body">
@@ -25,20 +34,32 @@ function Post() {
                       className="like_icon"
                       onClick={() => dispatch(handle_like(id))}
                     >
-                      like
+                      <IconContext.Provider
+                        value={{ size: "20px", color: "black" }}
+                      >
+                        <AiOutlineLike />
+                      </IconContext.Provider>
                     </span>
                   </span>
                   <span
                     className="edit"
-                    onClick={() => dispatch(handele_edit(id))}
+                    onClick={() => dispatch(handle_dislike(id))}
                   >
-                    edit
+                    {dislikes} <IconContext.Provider
+                        value={{ size: "20px", color: "black" }}
+                      >
+                        <AiOutlineDislike />
+                      </IconContext.Provider>
                   </span>
                   <span
                     className="delete"
                     onClick={() => dispatch(handle_delete(id))}
                   >
-                    delete
+                     <IconContext.Provider
+                        value={{ size: "24px", color: "black" }}
+                      >
+                        <AiOutlineDelete />
+                      </IconContext.Provider>
                   </span>
                 </div>
               </>

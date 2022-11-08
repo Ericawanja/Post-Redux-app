@@ -19,7 +19,7 @@ function PostInput() {
     let id = Math.floor(Math.random() * 136736723);
     const form_data = { title, desc, id };
     console.log(form_data);
-    dispatch(handle_create({ title, desc, id }));
+    dispatch(handle_create({ title, desc, id, likes:0, dislikes: 0 }));
 
     setDesc("");
     setTitle("");
