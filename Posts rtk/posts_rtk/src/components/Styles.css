@@ -14,3 +14,27 @@
   margin-top: 30px;
   border-radius: 5px;
 }
+.form_wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 90%;
+    
+}
+input, textarea{
+    padding: 5px;
+}
+.save {
+    width: 50px;
+    padding: 7px;
+    background-color: blue;
+    
+    margin-top: 13px;
+    
+}
