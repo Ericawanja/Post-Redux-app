@@ -3,7 +3,7 @@ import PostReducer from './features/PostSlice'
 
 const store= configureStore({
     reducer:{
-        Post:PostReducer
+        post_data:PostReducer
     },
 })
 

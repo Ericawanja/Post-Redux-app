@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { add_Post } from "./redux/features/PostSlice";
+import { useDispatch } from "react-redux";
 
 function PostForm() {
   let [title, setTitle] = useState("");
   let [desc, setDesc] = useState("");
 
-  const handle_click = ()=>{
-    console.log({title,desc});
-  }
+  let dispatch = useDispatch();
+
+  const handle_click = () => {
+    let data = { title, desc };
+   
+    dispatch(add_Post( title, desc ));
+  };
 
   return (
     <div className="form_wrapper">
@@ -28,7 +34,9 @@ function PostForm() {
           onChange={(e) => setDesc(e.target.value)}
         ></textarea>
 
-        <button className="save" onClick = {handle_click}>Save</button>
+        <button className="save" onClick={handle_click}>
+          Save
+        </button>
       </div>
     </div>
   );
