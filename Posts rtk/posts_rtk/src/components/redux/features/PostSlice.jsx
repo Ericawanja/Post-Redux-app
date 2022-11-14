@@ -11,13 +11,12 @@ const PostSlice = createSlice({
     add_Post: {
       reducer: (state, { payload }) => {
         console.log(payload);
-        //console.log(state.posts.pop());
+
         state = state.posts.unshift(payload);
       },
       prepare: (title, desc) => {
-        
         return {
-          payload: { id:nanoid(), title, desc },
+          payload: { id: nanoid(), title, desc },
         };
       },
     },
